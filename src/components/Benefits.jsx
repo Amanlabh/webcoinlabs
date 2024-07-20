@@ -1,3 +1,5 @@
+import React from 'react';
+import { benefits } from "../constants"; // Assuming this still holds the necessary data
 import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
@@ -10,227 +12,74 @@ const Benefits = () => {
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
-          title="What we provide?"
+          title="Chat Smarter, Not Harder with Brainwave"
         />
 
         <div className="flex flex-wrap gap-10 mb-10">
-          <div
-            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-            style={{
-              backgroundImage: `url('/images/benefit-1-bg.png')`,
-            }}
-          >
-            <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-              <h5 className="h5 mb-5">Content and Social Media Management</h5>
-              <p className="body-2 mb-6 text-n-3">
-              Providing Full team of content writers including social media manager (Currently We are overbooked ).
-              </p>
-
-              <div className="flex items-center mt-auto">
-               
-                <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                  Explore more
-                </p>
-                <Arrow />
-              </div>
-            </div>
-
-            <GradientLight />
-
+          {benefits.map((item, index) => (
             <div
-              className="absolute inset-0.5 bg-n-8"
-              style={{ clipPath: "url(#benefits)" }}
+              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+              style={{
+                backgroundImage: `url(${item.backgroundUrl})`,
+              }}
+              key={item.id}
             >
-              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                
-              </div>
-            </div>
-
-            <ClipPath />
-          </div>
-
-          <div
-            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-            style={{
-              backgroundImage: `url('/images/benefit-2-bg.png')`,
-            }}
-          >
-            <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-              <h5 className="h5 mb-5">Token Launch Services</h5>
-              <p className="body-2 mb-6 text-n-3">
-              Offering exclusive services for launching a memecoin, RWA, or other tokens. Also providing team to handle every aspect of the token launch.
-              
-              </p>
-
-              <div className="flex items-center mt-auto">
-                
-                <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                  Explore more
-                </p>
-                <Arrow />
-              </div>
-            </div>
-
-            <GradientLight />
-
-            <div
-              className="absolute inset-0.5 bg-n-8"
-              style={{ clipPath: "url(#benefits)" }}
-            >
-              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-              
-              </div>
-            </div>
-
-            <ClipPath />
-          </div>
-          <div
-            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-            style={{
-              backgroundImage: `url('/images/benefit-2-bg.png')`,
-            }}
-          >
-            <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-              <h5 className="h5 mb-5">Exclusive Alpha Group</h5>
-              <p className="body-2 mb-6 text-n-3">
-              Providing access to an exclusive alpha group for privileged insights and early information. (More details available upon private discussion)
-              </p>
-
-              <div className="flex items-center mt-auto">
+              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
                
-                <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                  Explore more
+                {/* Custom Heading and Content for Each Benefit */}
+                <h5 className="h5 mb-5">
+                  {index === 0 ? "Content and Social Media Management" :
+                   index === 1 ? "Token Launch Services" :
+                   index === 2 ? "Exclusive Alpha Group" :
+                   index === 3 ? "Deal Flow Exchange" :
+                   index === 4 ? "Technial support" :
+                   index === 5 ? "Big Collaborative Giveaway" : "Feature"}
+                </h5>
+                <p className="body-2 mb-6 text-n-3">
+                  {index === 0 ? "Providing Full team of content writers including social media manager (Currently We are overbooked ) ." :
+                   index === 1 ? "Offering exclusive services for launching a memecoin,RWA, or other tokens. Also providing team to handle every aspect of the token launch." :
+                   index === 2 ? "Providing access to an exclusive alpha group for privileged insights and early information.(More details available upon private discussion)." :
+                   index === 3 ? "Partner with a deal flow exchange platform to promote within their community.Offer exclusive entries for their members or co-host the giveaway." :
+                   index === 4 ? "Collaboration with market makers, alsokeep close with technical experts for project development." :
+                   index === 5 ? "Organizing a massive giveaway on our 100k+ Twitter and Telegram channels using Gleam including fun quiz to boost user interaction and engagement." : "Description"}
                 </p>
-                <Arrow />
+                {/* End of custom content */}
+                <div className="flex items-center mt-auto">
+                  <img
+                    src={item.iconUrl}
+                    width={48}
+                    height={48}
+                    alt={item.title}
+                  />
+                  <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
+                    Explore more
+                  </p>
+                  <Arrow />
+                </div>
               </div>
-            </div>
 
-            <GradientLight />
+              {item.light && <GradientLight />}
 
-            <div
-              className="absolute inset-0.5 bg-n-8"
-              style={{ clipPath: "url(#benefits)" }}
-            >
-              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                
+              <div
+                className="absolute inset-0.5 bg-n-8"
+                style={{ clipPath: "url(#benefits)" }}
+              >
+                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
+                  {item.imageUrl && (
+                    <img
+                      src={item.imageUrl}
+                      width={380}
+                      height={362}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
               </div>
+
+              <ClipPath />
             </div>
-
-            <ClipPath />
-          </div>
-          <div
-            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-            style={{
-              backgroundImage: `url('/images/benefit-2-bg.png')`,
-            }}
-          >
-            <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-              <h5 className="h5 mb-5">Deal Flow Exchange</h5>
-              <p className="body-2 mb-6 text-n-3">
-              Partner with a deal flow exchange plat-
-form to promote within their community.
-Offer exclusive entries for their members
-or co-host the giveaway.
-              </p>
-
-              <div className="flex items-center mt-auto">
-               
-                <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                  Explore more
-                </p>
-                <Arrow />
-              </div>
-            </div>
-
-            <GradientLight />
-
-            <div
-              className="absolute inset-0.5 bg-n-8"
-              style={{ clipPath: "url(#benefits)" }}
-            >
-              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                
-              </div>
-            </div>
-
-            <ClipPath />
-          </div>
-          <div
-            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-            style={{
-              backgroundImage: `url('/images/benefit-2-bg.png')`,
-            }}
-          >
-            <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-              <h5 className="h5 mb-5">Technical Support</h5>
-              <p className="body-2 mb-6 text-n-3">
-              Collaboration with market makers, also
-keep close withtechnical experts for
-project development.
-              </p>
-
-              <div className="flex items-center mt-auto">
-              
-                <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                  Explore more
-                </p>
-                <Arrow />
-              </div>
-            </div>
-
-            <GradientLight />
-
-            <div
-              className="absolute inset-0.5 bg-n-8"
-              style={{ clipPath: "url(#benefits)" }}
-            >
-              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-               
-              </div>
-            </div>
-
-            <ClipPath />
-          </div>
-
-          <div
-            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-            style={{
-              backgroundImage: `url('/images/benefit-3-bg.png')`,
-            }}
-
-            
-          >
-            <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-              <h5 className="h5 mb-5">Big Collaborative Giveaway</h5>
-              <p className="body-2 mb-6 text-n-3">
-              Organizing a massive giveaway on our
-100k+ Twitter and Telegram channels
-using Gleam including fun quiz to boost
-user interaction and engagement.
-              </p>
-
-              <div className="flex items-center mt-auto">
-               
-                <p className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider">
-                  Explore more
-                </p>
-                <Arrow />
-              </div>
-            </div>
-
-            <GradientLight />
-
-            <div
-              className="absolute inset-0.5 bg-n-8"
-              style={{ clipPath: "url(#benefits)" }}
-            >
-              <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-               
-              </div>
-            </div>
-
-            <ClipPath />
-          </div>
+          ))}
         </div>
       </div>
     </Section>
