@@ -36,7 +36,7 @@ Bash
 npm run dev
 Use code with caution.
 
-This will start the development server, typically accessible at http://localhost:3000 (the exact port might vary).
+This will start the development server, typically accessible at [http://localhost:3000](http://localhost:5173/) (the exact port might vary).
 
 5. Build for Production:
 
