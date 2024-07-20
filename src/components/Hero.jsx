@@ -34,10 +34,12 @@ const Hero = () => {
                 alt="Curve"
               />
             </span>
+            <br />
           </h1>
           <p className="body-1 max-w-1xl mx-auto mb-1 text-n-2 lg:mb-1 px-4 md:px-0 mt-4 md:mt-0">
             A world-class community-backed capital investing in top blockchain projects of the future. 
           </p>
+          <br />
           <div className="flex justify-center space-x-4">
             <Button href="/pricing" white>
               Contact
@@ -101,4 +103,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
