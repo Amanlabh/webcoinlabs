@@ -2,13 +2,13 @@ import Button from "./Button";
 import Heading from "./Heading";
 import Section from "./Section";
 import Tagline from "./Tagline";
-import { check2, loading1, grid } from "../assets"; // Ensure these are the correct imports
+import { check2, grid, loading1 } from "../assets";
 import { Gradient } from "./design/Roadmap";
 
 const Roadmap = () => (
   <Section className="overflow-hidden" id="roadmap">
     <div className="container md:pb-10">
-      <Heading tag="Ready to get started" title="GameFi,Advisor and more"  />
+      <Heading tag="Ready to get started" title="What we’re working on" />
 
       <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
         {/* Custom Content for Roadmap Items */}
@@ -19,16 +19,20 @@ const Roadmap = () => (
             </div>
             <div className="relative z-1">
               <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
-                <Tagline> Since 2024</Tagline>
+                <Tagline>Since 2024</Tagline>
                 <div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
-                <img className="mr-2.5" src={loading1} width={16} height={16} alt="In Progress" />
+                  <img className="mr-2.5" src={loading1} width={16} height={16} alt="In Progress" />
                   <div className="tagline">In Progress</div>
                 </div>
               </div>
               <h4 className="h4 mb-4">GameFi Project Partnership</h4>
               <p className="body-2 text-n-4">
-              Partnering with new and innovative GameFi Projects also including Gaming guild & eSports.
+                Partnering with new and innovative GameFi Projects also including Gaming guild & eSports.
               </p>
+              <br />
+              <div className="mb-10 -my-10 -mx-15">
+                <img className="w-full" src="https://jsm-brainwave.com/assets/image-2-C8poHMFX.png" alt="GameFi Project Partnership" />
+              </div>
             </div>
           </div>
         </div>
@@ -40,7 +44,7 @@ const Roadmap = () => (
             </div>
             <div className="relative z-1">
               <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
-                <Tagline> Since 2024</Tagline>
+                <Tagline>Since 2024</Tagline>
                 <div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
                   <img className="mr-2.5" src={loading1} width={16} height={16} alt="In Progress" />
                   <div className="tagline">In Progress</div>
@@ -48,8 +52,12 @@ const Roadmap = () => (
               </div>
               <h4 className="h4 mb-4">Advisory Board</h4>
               <p className="body-2 text-n-4">
-              Providing industry insights and support with member of Advisord Board.
+                Providing industry insights and support with member of Advisord Board.
               </p>
+              <br />
+              <div className="mb-10 -my-10 -mx-15">
+                <img className="w-full" src="https://jsm-brainwave.com/assets/image-1-BL_C2sN6.png" alt="Advisory Board" />
+              </div>
             </div>
           </div>
         </div>
@@ -69,8 +77,12 @@ const Roadmap = () => (
               </div>
               <h4 className="h4 mb-4">DEX & Liquidity Pools (LPs)</h4>
               <p className="body-2 text-n-4">
-              Collaborating with decentralized exchanges and establishing liquidity pools for project.
+                Collaborating with decentralized exchanges and establishing liquidity pools for project.
               </p>
+              <br />
+              <div className="mb-10 -my-10 -mx-15">
+                <img className="w-full" src="https://jsm-brainwave.com/assets/image-3-DL8wGSR2.png" alt="DEX & Liquidity Pools" />
+              </div>
             </div>
           </div>
         </div>
@@ -84,14 +96,18 @@ const Roadmap = () => (
               <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
                 <Tagline>Since 2024</Tagline>
                 <div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
-                <img className="mr-2.5" src={check2} width={16} height={16} alt="Done" />
+                  <img className="mr-2.5" src={check2} width={16} height={16} alt="Done" />
                   <div className="tagline">Done</div>
                 </div>
               </div>
               <h4 className="h4 mb-4">INO launchpad & Staking</h4>
               <p className="body-2 text-n-4">
-              Dedicated platform for Initial NFT Offerings (INOs) and staking platform to stake tokens and earn rewards.
+                Dedicated platform for Initial NFT Offerings (INOs) and staking platform to stake tokens and earn rewards.
               </p>
+              <br />
+              <div className="mb-10 -my-10 -mx-15">
+                <img className="w-full" src="https://jsm-brainwave.com/assets/image-4-Cbi5cq1J.png" alt="INO launchpad & Staking" />
+              </div>
             </div>
           </div>
         </div>
@@ -107,3 +123,4 @@ const Roadmap = () => (
 );
 
 export default Roadmap;
+
