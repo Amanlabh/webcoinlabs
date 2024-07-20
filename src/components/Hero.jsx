@@ -47,7 +47,7 @@ const Hero = () => {
             <Button href="/pricing" white>
               Kol
             </Button>
-            <Button href="/Webcoin-Pitchdeck.pdf" download white>
+            <Button href="https://deluxe-frangipane-4131b1.netlify.app/Webcoin-Pitchdeck.pdf" download white>
               Pitch Deck
             </Button>
           </div>
